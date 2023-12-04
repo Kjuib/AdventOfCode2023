@@ -18,5 +18,16 @@ class RegexUtil {
                 return Integer.valueOf(value)
             }
         }
+
+        fun parseInt(text: String, delimiter: String = " "): List<Int> {
+            return text.split(delimiter).mapNotNull {
+                val num = it.trim()
+                if (num.isEmpty()) {
+                    null
+                } else {
+                    Integer.valueOf(num)
+                }
+            }
+        }
     }
 }
