@@ -29,5 +29,16 @@ class RegexUtil {
                 }
             }
         }
+
+        fun parseLong(text: String, delimiter: String = " "): List<Long> {
+            return text.split(delimiter).mapNotNull {
+                val num = it.trim()
+                if (num.isEmpty()) {
+                    null
+                } else {
+                    num.toLong()
+                }
+            }
+        }
     }
 }
