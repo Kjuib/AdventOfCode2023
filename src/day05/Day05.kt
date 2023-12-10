@@ -1,6 +1,6 @@
 package day05
 
-import util.RegexUtil
+import util.StringUtil
 import java.io.File
 
 class PartA {
@@ -39,12 +39,12 @@ class PartA {
             if (line.isEmpty()) {
                 // do nothing
             } else if (line.startsWith("seeds:")) {
-                seeds = RegexUtil.parseLong(line.split(":")[1])
+                seeds = StringUtil.parseLong(line.split(":")[1])
             } else if (line.contains(" map:")) {
                 currentMap = line.split(" ")[0]
                 maps[currentMap] = mutableListOf()
             } else {
-                val values = RegexUtil.parseLong(line)
+                val values = StringUtil.parseLong(line)
                 maps[currentMap]?.add(ElfMap(values[0], values[1], values[2]))
             }
         }
@@ -95,12 +95,12 @@ class PartB {
             if (line.isEmpty()) {
                 // do nothing
             } else if (line.startsWith("seeds:")) {
-                seeds = RegexUtil.parseLong(line.split(":")[1])
+                seeds = StringUtil.parseLong(line.split(":")[1])
             } else if (line.contains(" map:")) {
                 currentMap = line.split(" ")[0]
                 maps[currentMap] = mutableListOf()
             } else {
-                val values = RegexUtil.parseLong(line)
+                val values = StringUtil.parseLong(line)
                 maps[currentMap]?.add(ElfMap(values[0], values[1], values[2]))
             }
         }

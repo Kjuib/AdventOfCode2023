@@ -1,6 +1,5 @@
 package day07
 
-import util.RegexUtil
 import java.io.File
 import kotlin.math.pow
 

@@ -1,8 +1,5 @@
 package day06
 
-import util.RegexUtil
-import java.io.File
-
 data class Race(val time: Int, val distance: Long)
 
 class PartA {

@@ -1,6 +1,6 @@
 package util
 
-class RegexUtil {
+class StringUtil {
     companion object {
         fun parseInt(regex: String, text: String, defaultValue: Int? = null): Int {
             return parseInt(Regex(regex), text, defaultValue)
@@ -39,6 +39,26 @@ class RegexUtil {
                     num.toLong()
                 }
             }
+        }
+
+        fun parseGraph(lines: List<String>): MutableList<MutableList<String>> {
+            return lines.map {line ->
+                line
+                    .split("")
+                    .filter { it.isNotEmpty() }
+                    .toMutableList()
+            }.toMutableList()
+        }
+
+        fun printGraph(label: String, graph: List<List<String>>) {
+            val lines = graph.map {
+                it.joinToString(" ")
+            }
+            println("${label}:\n${lines.joinToString("\n")}")
+        }
+
+        fun printList(label: String, list: List<Any>) {
+            println("${label}:\n${list.joinToString("\n")}")
         }
     }
 }

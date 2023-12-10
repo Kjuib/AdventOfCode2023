@@ -1,6 +1,6 @@
 package day02
 
-import util.RegexUtil
+import util.StringUtil
 import java.io.File
 
 val example = """
@@ -22,13 +22,13 @@ private val greenCountRegex = Regex("(\\d*) green")
 class PartA {
 
     private fun parseLine(line: String): Game {
-        val gameIndex = RegexUtil.parseInt(gameIndexRegex, line)
+        val gameIndex = StringUtil.parseInt(gameIndexRegex, line)
 
         val sessionStringList = line.split(":")[1].split(";")
         val sessionList = sessionStringList.map {
-            val redCount = RegexUtil.parseInt(redCountRegex, it, 0)
-            val blueCount = RegexUtil.parseInt(blueCountRegex, it, 0)
-            val greenCount = RegexUtil.parseInt(greenCountRegex, it, 0)
+            val redCount = StringUtil.parseInt(redCountRegex, it, 0)
+            val blueCount = StringUtil.parseInt(blueCountRegex, it, 0)
+            val greenCount = StringUtil.parseInt(greenCountRegex, it, 0)
 
             Cubes(redCount, blueCount, greenCount)
         }
@@ -68,7 +68,7 @@ class PartA {
 class PartB {
 
     private fun parseLine(line: String): Game {
-        val gameIndex = RegexUtil.parseInt(gameIndexRegex, line)
+        val gameIndex = StringUtil.parseInt(gameIndexRegex, line)
 
         val sessionStringList = line.split(":")[1].split(";")
         val sessionList = sessionStringList.map {

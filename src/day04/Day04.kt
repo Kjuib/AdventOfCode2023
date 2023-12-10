@@ -1,6 +1,6 @@
 package day04
 
-import util.RegexUtil
+import util.StringUtil
 import java.io.File
 import kotlin.math.pow
 
@@ -16,8 +16,8 @@ class PartA {
         val cards = lines.map { line ->
             val result = cardRegex.find(line) ?: throw Exception("Unable to parse: ${line}")
             val gameNumber = Integer.parseInt(result.groupValues[1])
-            val winningNumbers = RegexUtil.parseInt(result.groupValues[2])
-            val currentNumbers = RegexUtil.parseInt(result.groupValues[3])
+            val winningNumbers = StringUtil.parseInt(result.groupValues[2])
+            val currentNumbers = StringUtil.parseInt(result.groupValues[3])
 
             Card(gameNumber, winningNumbers, currentNumbers)
         }
@@ -47,8 +47,8 @@ class PartB {
         val cards = lines.map { line ->
             val result = cardRegex.find(line) ?: throw Exception("Unable to parse: ${line}")
             val gameNumber = Integer.parseInt(result.groupValues[1])
-            val winningNumbers = RegexUtil.parseInt(result.groupValues[2])
-            val currentNumbers = RegexUtil.parseInt(result.groupValues[3])
+            val winningNumbers = StringUtil.parseInt(result.groupValues[2])
+            val currentNumbers = StringUtil.parseInt(result.groupValues[3])
 
             Card(gameNumber, winningNumbers, currentNumbers, 1)
         }

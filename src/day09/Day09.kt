@@ -1,6 +1,6 @@
 package day09
 
-import util.RegexUtil
+import util.StringUtil
 import java.io.File
 
 class PartA {
@@ -28,7 +28,7 @@ class PartA {
 //        val lines =  File("./src/${ this.javaClass.packageName }/example.txt").readLines()
         val lines =  File("./src/${ this.javaClass.packageName }/input.txt").readLines()
 
-        val data = lines.map { RegexUtil.parseInt(it, " ")}
+        val data = lines.map { StringUtil.parseInt(it, " ")}
 
         val results = data.map {
             val newList = handleData(it)
@@ -63,7 +63,7 @@ class PartB {
 //        val lines =  File("./src/${ this.javaClass.packageName }/example.txt").readLines()
         val lines =  File("./src/${ this.javaClass.packageName }/input.txt").readLines()
 
-        val data = lines.map { RegexUtil.parseInt(it, " ")}
+        val data = lines.map { StringUtil.parseInt(it, " ")}
 
         val results = data.map {
             val newList = handleData(it)
