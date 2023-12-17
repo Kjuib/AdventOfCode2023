@@ -50,7 +50,17 @@ class StringUtil {
             }.toMutableList()
         }
 
-        fun printGraph(label: String, graph: List<List<String>>) {
+        fun parseGraphInt(lines: List<String>): MutableList<MutableList<Int>> {
+            return lines.map {line ->
+                line
+                    .split("")
+                    .filter { it.isNotEmpty() }
+                    .map { it.toInt() }
+                    .toMutableList()
+            }.toMutableList()
+        }
+
+        fun printGraph(label: String, graph: List<List<Any>>) {
             val lines = graph.map {
                 it.joinToString(" ")
             }
